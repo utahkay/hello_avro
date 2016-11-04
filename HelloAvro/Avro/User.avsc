@@ -1,0 +1,10 @@
+﻿{
+  "namespace": "ps.platform.test",
+  "type": "record",
+  "name": "User2",
+  "fields":[
+    {  "name": "id", "type": "int"},
+    {   "name": "name",  "type": "string"},
+    {   "name": "email", "type": ["string", "null"] }
+  ]
+}

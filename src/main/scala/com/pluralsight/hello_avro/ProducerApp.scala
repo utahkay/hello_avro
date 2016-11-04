@@ -20,9 +20,9 @@ object ProducerApp {
     val schema: Schema = new Schema.Parser().parse(schemaStr)
 
     val user: GenericRecord = new GenericData.Record(schema)
-    user.put("id", 1)
-    user.put("name", "dan")
-    user.put("email", "daniel@test.com")
+    user.put("id", 2)
+    user.put("name", "becca")
+    user.put("email", "rebecca@test.com")
 
     val props = new Properties()
     props.put("bootstrap.servers", "10.107.219.195:9092")

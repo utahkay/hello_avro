@@ -1,0 +1,6 @@
+﻿{
+  "namespace": "ps.platform.test",
+  "type": "record",
+  "name": "Username",
+  "fields":[ {  "name": "username", "type": "string"} ]
+}

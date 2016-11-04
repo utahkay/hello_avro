@@ -3,7 +3,6 @@ package com.pluralsight.hello_avro
 import java.util
 import java.util.Properties
 
-import org.apache.avro.Schema
 import org.apache.avro.generic.GenericRecord
 import org.apache.kafka.clients.consumer.{ConsumerRecord, ConsumerRecords, KafkaConsumer}
 
@@ -14,24 +13,10 @@ import org.apache.kafka.clients.consumer.{ConsumerRecord, ConsumerRecords, Kafka
 // See https://github.com/confluentinc/examples/tree/kafka-0.10.0.1-cp-3.0.1/kafka-clients
 object ConsumerApp {
   def main(args: Array[String]): Unit = {
-//    val SCHEMA_STRING =
-//      """
-//    {
-//      "namespace": "ps.platform.test",
-//      "type": "record",
-//      "name": "user.v3",
-//      "fields":[
-//      {  "name": "id", "type": "int"},
-//      {   "name": "name",  "type": "string"},
-//      {   "name": "email", "type": ["string", "null"]}
-//      ]
-//    }
-//      """
-//    val schema: Schema = new Schema.Parser().parse(SCHEMA_STRING)
 
     val props = new Properties()
     props.put("bootstrap.servers", "10.107.219.195:9092")
-    props.put("group.id", "kay-consumer-group-test3")
+    props.put("group.id", "kay-consumer-group-test4")
     props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
     props.put("value.deserializer", "io.confluent.kafka.serializers.KafkaAvroDeserializer")
     props.put("schema.registry.url", "http://10.107.220.101:8081")
@@ -44,8 +29,6 @@ object ConsumerApp {
     val topic = "ps.platform.test.kay.v3"
 
     consumer.subscribe(util.Arrays.asList(topic))
-
-//    val reader: DatumReader[GenericRecord] = new SpecificDatumReader[GenericRecord](schema)
 
     try {
       while (true) {

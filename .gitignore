@@ -16,3 +16,10 @@ project/plugins/project/
 .scala_dependencies
 .worksheet
 .idea
+
+
+#clr
+.vs
+packages/
+bin/
+obj/
